@@ -30,7 +30,7 @@ const LoginForm = ({
 
 const mapStateToProps = (props) => {
     return {
-  		props: props.login
+  		props: props.main
     };
 }
 

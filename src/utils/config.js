@@ -8,5 +8,6 @@ module.exports = {
 		userLogout: `${APIV1}/user/logout`,
 		userInfo: `${APIV1}/userInfo`,
 		getList: `${APIV1}/getList`,
+		getMenu: `${APIV1}/getMenu`,
 	},
 }

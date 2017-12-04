@@ -7,6 +7,7 @@ let config = [
     '/home/index',              // 首页
     '/login',                   // 登录页
     '/register',                // 注册页
+    '/main',                // 注册页
 ];
 
 // 定义路由
