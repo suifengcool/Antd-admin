@@ -5,6 +5,7 @@ import { Button, Input, Spin, Layout, Menu, Dropdown, Breadcrumb, Icon, Avatar, 
 
 import _styles from './index.css';
 import styles from '../../components/component.css';
+import {components} from '../../router.map';
 
 const {SubMenu} = Menu;
 const {Header, Content, Sider, Footer} = Layout;
@@ -12,20 +13,55 @@ const {Header, Content, Sider, Footer} = Layout;
 const clientHeight = document.body.clientHeight;
 const minHeight = clientHeight - (56 + 45 + 10 + 15);
 
-const Main = ({main,dispatch}) => {
-    const {
-        menuLinks, 
-        currentRoute,
-        menus, 
-        collapsed,
-        current, 
-        rootSubmenuKeys, 
-        spinning, 
-        nav,
-        tip
-    } = main;
+const Main = ({main, dispatch}) => {
+    
+    const {currentRoute, nav} = main;
 
-    console.log('nav:',nav)
+    const menus = [{
+        children:[],
+        id:1,
+        key:"0_1",
+        link:"overview",
+        sign:"overviewIcon",
+        txt:"总览"
+    },{
+        children:[{
+            key: "1_2", 
+            id: 2, 
+            txt: "图表分析", 
+            link: "manage_echarts"
+        },{
+            key: "5_2", 
+            id: "8001", 
+            txt: "配置中心", 
+            link: "manage_config"
+        }],
+        id:3,
+        key:"1_1",
+        link:"manage_echarts",
+        sign:"manageIcon",
+        txt:"运营管理"
+    },{
+        children:[{
+            key: "2_2", 
+            id: "8001", 
+            txt: "cms管理", 
+            link: "articls"
+        }],
+        id:4,
+        key:"2_1",
+        link:"articls",
+        sign:"applicationIcon",
+        txt:"其他应用"
+    },{
+        children:[],
+        id:5,
+        key:"3_1",
+        link:"myself",
+        sign:"aboutMeIcon",
+        txt:"About me"
+    }]
+
     return (
     	<Layout>
             <div style={{height:clientHeight}}>
@@ -97,7 +133,8 @@ const Main = ({main,dispatch}) => {
                         className={_styles['sider-bg']}
                         trigger={null}
                         style={{minHeight}}
-                        width={200}>
+                        width={200}
+                    >
                         <div className={_styles['control-label']}>
                             <span>控制台</span>
                         </div>
@@ -105,17 +142,17 @@ const Main = ({main,dispatch}) => {
                             className={_styles['sider-bg']}
                             theme="dark"
                             mode="inline"
-                            openKeys={rootSubmenuKeys}
-                            onOpenChange={e=>dispatch({type:'main/setParams',payload:{rootSubmenuKeys:[e.pop()]}})}
-                            >
+                        >
                             {
-                                menus.map((m, i) => {
+                                menus.length && menus.map((m, i) => {
                                     const {txt, link, children, key, sign} = m;
                                     return (
-                                        children.length > 0 ? (
-                                            <SubMenu key={`sub${key}`}
-                                                    title={
-                                                    <div style={current==key?{color:'#1275c5'}:{color:'#eee'}}>
+                                        children.length > 0 
+                                        ? (
+                                            <SubMenu 
+                                                key = {`sub${key}`}
+                                                title = {
+                                                    <Link to={`/${link}`} style={{color:'#eee'}}>
                                                         <Row>
                                                             <Col span={4} style={{padding: '10px 0'}}>
                                                                 <div className={_styles[`${sign}`]}></div>
@@ -124,14 +161,14 @@ const Main = ({main,dispatch}) => {
                                                                 {txt}
                                                             </Col>
                                                         </Row>
-                                                    </div>
-                                                    }>
+                                                    </Link>
+                                                }
+                                            >
                                                 {
                                                     children.map((c, j) => {
                                                         return (
                                                             <Menu.Item key={c.key}>
-                                                                <Link to={`/${c.link}`}
-                                                                      style={current==c.key?{color:'#1275c5'}:{color:'#eee'}}>
+                                                                <Link to={`/${c.link}`} style={{color:'#eee'}}>
                                                                     {c.txt}
                                                                 </Link>
                                                             </Menu.Item>
@@ -139,10 +176,10 @@ const Main = ({main,dispatch}) => {
                                                     })
                                                 }
                                             </SubMenu>
-                                        ) : (
+                                        ) 
+                                        : (
                                             <Menu.Item className={_styles['sider-bg']} key={key}>
-                                                <Link to={`/${link}`}
-                                                      style={current==key?{color:'#1275c5'}:{color:'#eee'}}>
+                                                <Link to={`/${link}`} style={{color:'#eee'}}>
                                                     <Row>
                                                         <Col span={4} style={{padding: '5px 0'}}>
                                                             <Icon className={_styles[`${sign}`]}/>
@@ -160,16 +197,19 @@ const Main = ({main,dispatch}) => {
                     </Sider>
                     <Layout className={_styles['layout-content-margin-top']} className={_styles['fixIE10Flex']}>
                         <div className={_styles.breadcrumb}>
-                            {
+                            {/*
                                 nav.map((d, i) => {
                                     return (
                                         <div key={i}>{d}</div>
                                     )
                                 })
-                            }
+                            */}
                         </div>
-                        <Content className={_styles['content-margin-top']} style={{minHeight}}>
-                            内容区域
+                        <Content className={`${_styles['content-margin-top']} ${styles['popup-container']}`}
+                            style={{minHeight}} id='popup-container'>
+                            {
+                                components[currentRoute] || ''
+                            }
                         </Content>
                     </Layout>
                 </Layout>
@@ -189,6 +229,5 @@ const mapDispatchToProps = (dispatch) => {
 		dispatch
     };
 }
-
 
 export default connect(mapStateToProps, mapDispatchToProps)(Main);

@@ -9,8 +9,12 @@ const app = dva();
 
 // 3. Model
 app.model(require('./models/login'));
-app.model(require('./models/home'));
 app.model(require('./models/main'));
+app.model(require('./models/articls'));
+app.model(require('./models/manageConfig'));
+app.model(require('./models/manageEcharts'));
+app.model(require('./models/myself'));
+app.model(require('./models/overview'));
 
 // 4. Router
 app.router(require('./router'));

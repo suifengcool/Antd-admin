@@ -57,6 +57,10 @@
     font-size: 30px;
 }
 
+.font-bold {
+    font-weight: bold;
+}
+
 .font-scale-8 {
     font-size: 12px;
     -webkit-transform-origin-x: 0;
@@ -96,6 +100,10 @@
 }
 
 .font-color-2a547b {
+    color: #2a547b;
+}
+
+.font-color-2a547b:hover{
     color: #2a547b;
 }
 
@@ -170,7 +178,9 @@
 .margin-bottom {
     margin-bottom: 15px;
 }
-
+.margin-bottom-10 {
+    margin-bottom: 10px;
+}
 .margin-right-none {
     margin-right: 0 !important;
 }
@@ -198,9 +208,6 @@
 .padding-top {
     padding-top: 15px;
 }
-.padding0{
-	padding: 0 !important;
-}
 
 .padding-bottom {
     padding-bottom: 15px;
@@ -225,9 +232,7 @@
 .padding-15 {
     padding: 15px;
 }
-.padding-10 {
-    padding: 10px;
-}
+
 .margin-10 {
     margin: 15px;
 }
@@ -270,10 +275,9 @@
 }
 
 .content-box, .content-box-inline {
-	
     background: #fff;
     padding: 20px;
-    margin-bottom: 10px;
+    box-shadow: 0 3px 5px #d1d1d1
 }
 
 .content-box-inline {
@@ -343,6 +347,7 @@
 .cursor {
     cursor: pointer;
 }
+
 .text-overflow {
     white-space: normal;
     display: -webkit-box;
@@ -351,5 +356,81 @@
     overflow: hidden;
 }
 .word-wrap{
-	word-wrap:break-word
+    word-wrap:break-word
+}
+
+/* 解决下拉框浮层定位的问题 */
+.popup-container {
+    position: relative;
+}
+
+.height-line-height-36{
+    height: 36px !important;;
+    line-height: 36px !important;;
+}
+
+.height-line-height-28{
+    height: 28px !important;;
+    line-height: 28px !important;;
+}
+
+.content-box-gray{
+    padding: 20px 0 0 0;
+}
+
+.icon-1 {
+    width: 20px;
+    height: 20px;
+    background-image: url(../assets/icons.png);
+    background-repeat: no-repeat;
+    background-position: -275px 0;
+}
+
+.icon-2 {
+    width: 20px;
+    height: 20px;
+    background-image: url(../assets/icons.png);
+    background-repeat: no-repeat;
+    background-position: -300px 0;
+}
+
+.icon-3 {
+    width: 58px;
+    height: 58px;
+    background-image: url(../assets/icons.png);
+    background-repeat: no-repeat;
+    background-position: 0 -73px;
+}
+
+.icon-4 {
+    width: 58px;
+    height: 58px;
+    background-image: url(../assets/icons.png);
+    background-repeat: no-repeat;
+    background-position: -63px -73px;
+}
+
+.icon-5 {
+    width: 58px;
+    height: 58px;
+    background-image: url(../assets/icons.png);
+    background-repeat: no-repeat;
+    background-position: -126px -73px;
+}
+
+.icon-6 {
+    width: 58px;
+    height: 58px;
+    background-image: url(../assets/icons.png);
+    background-repeat: no-repeat;
+    background-position: -189px -73px;
+}
+
+.radius-5{
+    border-radius: 4px;
+}
+
+.title-center{
+    text-align: center;
+    color: #999;
 }

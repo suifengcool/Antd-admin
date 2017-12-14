@@ -188,23 +188,7 @@
     background-position: -81px -25px;
 }
 
-.asset-manage-1 {
-    width: 20px;
-    height: 20px;
-    background-image: url(../../assets/icons.png);
-    background-repeat: no-repeat;
-    background-position: 0 0;
-}
-
-.asset-manage-2 {
-    width: 20px;
-    height: 20px;
-    background-image: url(../../assets/icons.png);
-    background-repeat: no-repeat;
-    background-position: -25px 0;
-}
-
-.custom-manage-1 {
+.aboutMeIcon {
     width: 20px;
     height: 20px;
     background-image: url(../../assets/icons.png);
@@ -212,63 +196,15 @@
     background-position: 0 -218px;
 }
 
-.custom-manage-2 {
+.overviewIcon {
     width: 20px;
     height: 20px;
     background-image: url(../../assets/icons.png);
     background-repeat: no-repeat;
-    background-position: -25px -218px;
+    background-position: 0 0;
 }
 
-.charging-list-1 {
-    width: 20px;
-    height: 20px;
-    background-image: url(../../assets/icons.png);
-    background-repeat: no-repeat;
-    background-position: -50px -218px;
-}
-
-.charging-list-2 {
-    width: 20px;
-    height: 20px;
-    background-image: url(../../assets/icons.png);
-    background-repeat: no-repeat;
-    background-position: -75px -218px;
-}
-
-.net-defend-1 {
-    width: 20px;
-    height: 20px;
-    background-image: url(../../assets/icons.png);
-    background-repeat: no-repeat;
-    background-position: -50px 0;
-}
-
-.net-defend-2 {
-    width: 20px;
-    height: 20px;
-    background-image: url(../../assets/icons.png);
-    background-repeat: no-repeat;
-    background-position: -75px 0;
-}
-
-.config-manage-1 {
-    width: 20px;
-    height: 20px;
-    background-image: url(../../assets/icons.png);
-    background-repeat: no-repeat;
-    background-position: -100px -218px;
-}
-
-.config-manage-2 {
-    width: 20px;
-    height: 20px;
-    background-image: url(../../assets/icons.png);
-    background-repeat: no-repeat;
-    background-position: -125px -218px;
-}
-
-.audit-manage-1 {
+.manageIcon {
     width: 20px;
     height: 20px;
     background-image: url(../../assets/icons.png);
@@ -276,39 +212,7 @@
     background-position: -150px -218px;
 }
 
-.audit-manage-2 {
-    width: 20px;
-    height: 20px;
-    background-image: url(../../assets/icons.png);
-    background-repeat: no-repeat;
-    background-position: -175px -218px;
-}
-
-.system-manage-1 {
-    width: 20px;
-    height: 20px;
-    background-image: url(../../assets/icons.png);
-    background-repeat: no-repeat;
-    background-position: -200px -218px;
-}
-
-.system-manage-2 {
-    width: 20px;
-    height: 20px;
-    background-image: url(../../assets/icons.png);
-    background-repeat: no-repeat;
-    background-position: -225px -218px;
-}
-
-.application-1 {
-    width: 20px;
-    height: 20px;
-    background-image: url(../../assets/icons.png);
-    background-repeat: no-repeat;
-    background-position: -250px -218px;
-}
-
-.application-2 {
+.applicationIcon {
     width: 20px;
     height: 20px;
     background-image: url(../../assets/icons.png);
